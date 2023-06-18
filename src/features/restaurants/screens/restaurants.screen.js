@@ -10,7 +10,6 @@ import { RestaurantsContext } from "../../../services/restaurant/restaurant.cont
 
 import { Search } from "../components/search.component";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
-import { Favourite } from "../../../components/favourites/favourite.component";
 import { FavouritesBar } from "../../../components/favourites/favourites-bar.component";
 import { FavouritesContext } from "../../../services/favourites/favourites.context";
 
