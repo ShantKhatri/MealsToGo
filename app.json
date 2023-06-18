@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "MealsToGo",
-    "slug": "MealsToGo",
+    "slug": "mealstogo",
     "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3d3c285f-60cb-4855-bea1-ac4e29919171"
+      }
+    },
+    "owner": "prashantkhatri"
   }
 }
