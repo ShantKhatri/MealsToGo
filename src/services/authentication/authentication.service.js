@@ -2,6 +2,7 @@ import firebase from "firebase/compat/app";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
@@ -15,10 +16,12 @@ const firebaseConfig = {
 };
 
 const app = firebase.initializeApp(firebaseConfig);
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
 export const loginRequest = (email, password) =>
   signInWithEmailAndPassword(auth, email, password);
 
 export const registerRequest = (email, password, repeatedPassword) =>
   createUserWithEmailAndPassword(auth, email, password);
+
+export const userChanged = (user) => onAuthStateChanged(auth, user);
