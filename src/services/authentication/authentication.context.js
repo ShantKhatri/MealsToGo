@@ -1,11 +1,6 @@
 import React, { useState, createContext } from "react";
 
-import {
-  loginRequest,
-  registerRequest,
-  auth,
-  userChanged,
-} from "./authentication.service";
+import { loginRequest, registerRequest, auth } from "./authentication.service";
 import { signOut } from "firebase/auth";
 
 export const AuthenticationContext = createContext();
@@ -15,7 +10,7 @@ export const AuthenticationContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
 
-  userChanged((usr) => {
+  auth.onAuthStateChanged((usr) => {
     if (usr) {
       setUser(usr);
       setIsLoading(false);
@@ -56,7 +51,10 @@ export const AuthenticationContextProvider = ({ children }) => {
 
   const onLogout = () => {
     setUser(null);
-    signOut(auth);
+    signOut(auth).then(() => {
+      setUser(null);
+      setError(null);
+    });
   };
 
   return (

@@ -24,4 +24,4 @@ export const loginRequest = (email, password) =>
 export const registerRequest = (email, password, repeatedPassword) =>
   createUserWithEmailAndPassword(auth, email, password);
 
-export const userChanged = (user) => onAuthStateChanged(auth, user);
+// export const userChanged = (user) => onAuthStateChanged(auth, user);
